@@ -1,0 +1,59 @@
+//CALENDAR PAGE SASS
+.views-element-container {
+  h3 { //style for the month and year text
+    margin-top: 40px;
+    font-size: 3em;
+    font-family: titleFont;
+    text-align: center;
+  }
+  .js-pager__items { //style for previous/next buttons
+    padding: 0;
+  }
+  .pager li > a { //style for individual buttons
+    &:hover {
+      background-color: $lightSatGreen;
+      border-color: $green;
+    }
+  }
+}
+
+//PRESS PAGE SASS
+.press-page {
+  header {
+    h3 {
+      font-family: sans-serif;
+      text-align: left;
+      font-size: 1.7em;
+    }
+  }
+  article {
+    .press-release-file {
+      font-size: 1.3em;
+    }
+    .production-picture {
+      float: right;
+    }
+  }
+  footer {
+    background-color: $green;
+    p {
+      color: black;
+    }
+  }
+}
+
+//style for top visitor message on home page & season/events
+.dotBorder {
+    margin: 20px auto 20px;
+    max-width: 700px;
+    border: dotted 3px $green;
+    p {
+      @extend %resetSize;
+      padding: 10px;
+      text-align: center;
+    }
+    a {
+      text-decoration: underline;
+      color: $purple;
+    }
+  }

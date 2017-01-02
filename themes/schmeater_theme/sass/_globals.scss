@@ -1,0 +1,136 @@
+* {
+  -webkit-box-sizing: border-box; //old support
+  -moz-box-sizing: border-box; //old
+  box-sizing: border-box; //new
+}
+html{
+    font-size: 100%;
+}
+body{
+    -webkit-font-smoothing: antialiased;
+    background:#fff;
+    font-family: sans-serif;
+    min-height: 100vh;
+}
+h1 { //default 1st header style
+  font-size: 3.3em;
+  font-family: titleFont;
+}
+h2 { //default 2nd header style
+  font-size: 2.2em;
+  margin-bottom: 10px;
+  font-family: titleFont;
+}
+a { //default link style
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+}
+p { //default paragraph size
+  font-size: 1.2em;
+  line-height: 2em;
+  >a {
+    color: $purple;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+      color: $green;
+    }
+  }
+}
+/* float clearing for IE6 */
+* html .clearfix{
+ height: 1%;
+ overflow: visible;
+}
+/* float clearing for IE7 */
+*+html .clearfix{
+ min-height: 1%;
+}
+/* float clearing for everyone else */
+.clearfix:after{
+ clear: both;
+ content: ".";
+ display: block;
+ height: 0;
+ visibility: hidden;
+ font-size: 0;
+}
+.clr{clear:both;}
+.affix { //sticks main nav to top on small displays
+  top: 0;
+  width: 100%;
+  @media (min-width: $medium-size) {
+    position: relative;
+  }
+}
+.layout-content { //centers all content
+  max-width: 1000px;
+  @media (max-width: $small-size) {
+    max-width: 500px;
+  }
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 8px;
+  @media (min-width: $small-size) {
+    padding: 0 30px;
+  }
+  @media (min-width: $large-size) {
+    padding: 0;
+  }
+  &::before {
+    display: table;
+    content: " ";
+  }
+  &::after {
+    clear: both;
+    display: table;
+    content: " ";
+  }
+}
+//on photo library & events page to condense filters
+.form-actions, .form-wrapper, .form-item {
+  @extend %inline;
+  margin: 0 8px 15px;
+}
+//grid style for any viewer
+.views-element-container {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.views-row {
+  padding: 12px;
+  @media (min-width: $small-size) {
+    padding-left: 50px;
+    padding-bottom: 20px;
+  }
+}
+.row-1, .row-3, .row-5, .row-7, .row-9, .row-11 {
+  border-left: dotted 3px $green;
+  border-right: dotted 3px $green;
+  border-top: dotted 3px $green;
+  border-bottom: dotted 3px $green;
+  background-color: $lightSatGreen;
+} //this gives pretty every-even row style
+.row-2, .row-4, .row-6, .row-8, .row-10, .row-12 {
+  border-left: dotted 3px $green;
+  border-right: dotted 3px $green;
+  border-radius: 5px;
+  border-top: dotted 3px $green;
+  border-bottom: dotted 3px $green;
+}
+.btn-info { //styles the "Apply" button
+  color: black;
+  background-color: $lightPurple;
+  border-color: $purple;
+  font-size: 1.4em;
+  &:hover {
+    border-color: $lightPurple;
+    background-color: $purple;
+    color: white;
+  }
+}

@@ -1,0 +1,106 @@
+header { //SASS for that green bar at the top
+  > a { //makes entire thing one big link
+    @extend %flex;
+    height: 135px;
+    width: 100%;
+    margin-top: -15px; //otherwise 15px of white, idk why
+    background: $green;
+    font-family: titleFont;
+    color: $purple;
+    &:hover {
+      color: #fff;
+    }
+    h1 { //all so I could align it in the center
+      @extend %flex-grow;
+      align-self: center;
+      text-align: center;
+      font-size: 3.8em;
+    }
+  }
+  nav { //so the main nav is neatly aligned center
+    @extend %flex;
+    -webkit-justify-content: center; //old support
+    -moz-justify-content: center; //still old
+    justify-content: center; //new
+    z-index: 50;
+    .container-fluid {
+      width: 100%;
+    }
+  }
+}
+.main-nav { //container holding main menu
+  z-index: 50;
+  height: 50px;
+  /* switches between a menu that's sticky at
+  top on small devices to normal one on bigger */
+  .navbar {
+    @media (min-width: $small-size) { //once big
+      .collapse { //shows the normal one
+          display: block;
+      }
+      .navbar-header { //hides the sticky one
+          display: none;
+      }
+    }
+    background-color: $lightPurple;
+    .navbar-toggle { //overwriting bootstrap defaults
+      &:hover {
+        background-color: $purple;
+      }
+      &:focus {
+        background-color: $purple;
+      }
+      .icon-bar {
+        background-color: darken(white, 15%);
+      }
+    }
+    h3 { //menu title, only shows on small sticky nav
+      margin: 0;
+      padding: 10px 0 0 17px;
+      text-align: left;
+      font-size: 1.3em;
+      color: white;
+      span {
+        font-size: 1.4em;
+      }
+    }
+    ul { //the menu layout
+      text-align: center;
+      li { //default is small, so showing in column
+        &:nth-child(1n+2) {
+          border-top: 1px solid white;
+        }
+        @media (min-width: $small-size) { //once big
+          display: inline-block; //show menu as row
+          border-left: 1px solid white;
+          &:nth-child(1n+2) {
+            border-top: none;
+          }
+          &:last-child {
+            border-right: 1px solid white;
+          }
+        }
+        a { //make those menu items look good
+          display: block;
+          padding: 17px 20px;
+          height: 50px;
+          color: black;
+          background-color: transparent;
+          transition: background-color .3s;
+          &:hover {
+            color: white;
+            background-color: $purple;
+          }
+        }
+      }
+    }
+  }
+}
+#navbar { //necessary for smooth scaling
+  .nav {
+    @extend %resetSize;
+    li {
+      margin-right: -4px;
+    }
+  }
+}

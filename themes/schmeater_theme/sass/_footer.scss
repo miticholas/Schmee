@@ -1,0 +1,120 @@
+
+
+footer {
+  @extend %flex;
+  -webkit-flex-direction: column; //old
+  -moz-flex-direction: column; //old
+  flex-direction: column; // NEW
+  background-color: $purple;
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+  ul { //footer's menu CSS
+    margin: 8px 0;
+    font-size: .8em;
+    @media (min-width: $small-size) {
+      font-size: 1em;
+      margin-bottom: 0;
+    }
+    li { //so they aren't stacked
+      display: inline;
+      &::after { //everyone likes vertical pipes
+        content: " | ";
+        color: $green;
+      }
+      &:last-child {
+        &::after {
+          content: " ";
+        }
+      }
+      a {
+        color: white;
+        &:hover {
+          color: $green;
+        }
+      }
+    }
+  }
+  .footerInfo { //the rest of the footer is in here
+    @extend %flex-grow;
+    @extend %flex;
+    align-items: center; //centering css
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+
+    .logo { //make that logo pretty
+      width: 40px;
+      height: 40px;
+      margin: 5px 9px;
+      @media (min-width: $small-size) {
+        width: 70px;
+        height: 70px;
+        margin: 11px 15px;
+      }
+      background-image: url(../images/badge-green-purple-back.png);
+      background-size: cover;
+      background-position: center center;
+    }
+    p { //for the address
+      @extend %resetSize;
+      @media (min-width: $small-size) {
+        margin-right: 25px;
+      }
+      line-height: 1.5;
+      font-size: .9em;
+      &:first-child {
+        font-size: 1.1em;
+      }
+    }
+    span {
+      font-weight: bold;
+    }
+    .mailing-address { //for "Mailing Address"
+      @media (max-width: $small-size) {
+        display: none;
+      }
+      label {
+        font-weight: 400;
+      }
+    }
+    .links { //the Facebook & Twitter logos
+      a {
+        color: white;
+        &:hover {
+          color: $green;
+        }
+      }
+      span {
+        @extend %inline;
+        border-radius: 5px;
+        width: 29px;
+        height: 29px;
+        margin-left: 15px;
+      }
+      .fb {
+        background-image: url(../images/fb-white.png);
+        background-size: cover;
+        background-position: center center;
+        &:hover {
+          background-image: url(../images/fb-green.png);
+        }
+      }
+      .tw {
+        background-image: url(../images/tw-white.png);
+        background-size: cover;
+        background-position: center center;
+        &:hover {
+          background-image: url(../images/tw-green.png);
+        }
+      }
+    }
+  }
+  small { //my name at the bottom
+    font-size: .7em;
+    margin-top: 8px;
+    @media (min-width: $small-size) {
+      margin-top: 0;
+    }
+  }
+}

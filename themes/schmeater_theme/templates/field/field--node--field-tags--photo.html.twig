@@ -1,0 +1,26 @@
+{% if label_hidden %}
+  {% if multiple %}
+    <div{{ attributes }} class="photo-tags">
+      {% for item in items %}
+        <div{{ item.attributes }} class="photo-tag">{{ item.content }}</div>
+      {% endfor %}
+    </div>
+  {% else %}
+    {% for item in items %}
+      <div{{ attributes }} class="photo-tags">{{ item.content }}</div>
+    {% endfor %}
+  {% endif %}
+{% else %}
+  <div{{ attributes }} class="photo-tags">
+    <div{{ title_attributes }} class="photo-tags photo-tags-title">{{ label }}</div>
+    {% if multiple %}
+      <div class="photo-tags">
+    {% endif %}
+    {% for item in items %}
+      <div{{ item.attributes }} class="photo-tags">{{ item.content }}</div>
+    {% endfor %}
+    {% if multiple %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

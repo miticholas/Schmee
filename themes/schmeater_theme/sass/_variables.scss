@@ -1,0 +1,65 @@
+//color variables
+$purple: #5a3c87;
+$lightPurple: lighten($purple, 16%);
+$lighterPurple: lighten($purple, 50%);
+$green: #7bda0e;
+$darkGreen: darken($green, 15%);
+$lightGreen: lighten($green, 37%);
+$lightSatGreen: saturate($lightGreen, 30%);
+
+//media width variables
+$phone-size: 480px;
+$small-size: 615px;
+$medium-size: 768px;
+$large-size: 1004px;
+
+@font-face {
+    font-family: titleFont;
+    src: url(fonts/HelveticaNeueLTStd-BdCn.otf);
+}
+
+//extensions, because I hate repetitive css
+%flex { //backwards compatibility for flexboxes
+  display: -webkit-box; // old
+  display: -moz-box; // old
+  display: -ms-flexbox;// TWEENER - IE 10
+  display: -webkit-flex; // NEW - Chrome
+  display: flex; // NEW
+}
+%flex-grow {
+  //Backward Support for flexbox flex: 1;
+  -webkit-box-flex: 1;// old
+  -moz-box-flex: 1;// old
+  -webkit-flex: 1; /* Chrome */
+  -ms-flex: 1; /* IE 10 */
+  flex: 1; // NEW
+}
+%greenButton {
+  font-size: .9em;
+  font-weight: bold;
+  display: inline-block;
+  background-color: $green;
+  border-radius: 10px;
+  border: double 3px $lightSatGreen;
+  padding: 5px 0;
+  margin-bottom: 5px;
+  text-align: center;
+  &:hover {
+    background-color: $green;
+    border-color: $darkGreen;
+  }
+}
+%inline {
+  display: inline-block;
+}
+%image {
+  img {
+    -moz-box-shadow:0 0 8px 0 black;
+    -webkit-box-shadow:0 0 8px 0 black;
+    box-shadow:0 0 8px 0 black;
+  }
+}
+%resetSize {
+  margin: 0;
+  padding: 0;
+}

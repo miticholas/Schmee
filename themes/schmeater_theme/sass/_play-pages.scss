@@ -1,0 +1,160 @@
+//used by both view and individual play pages
+%basic-play-layout {
+  .play-author {
+    margin-left: 25px;
+  }
+  .date-range {
+    @extend %inline;
+    font-size: 1.5em;
+    font-style: italic;
+    font-weight: bold;
+  }
+  .play_blurb {
+    padding: 0;
+    line-height: 30px;
+    @media (min-width: $small-size) {
+      float: left;
+      width: 50%;
+    }
+  }
+  .production-picture {
+    @media (min-width: $small-size) {
+      float: left;
+    }
+    margin-left: 10px;
+    margin-right: 10px;
+    @extend %image;
+  }
+}
+$filter-stack: 806px;
+
+//SEASON/EVENTS PAGE SASS
+.events-page {
+  .events-title { //style for "Schmeater Shows"
+    font-size: 4em;
+    text-align: center;
+  }
+  .calendar-link { //styles "Go to Calendar View"
+    text-align: center;
+    @media (min-width: $filter-stack) {
+      float: left;
+      margin-left: 110px;
+    }
+    font-size: 1.5em;
+    a {
+      @extend %greenButton;
+      margin-top: 10px;
+      padding: 10px;
+    }
+  }
+  #views-exposed-form-season-events-page-1 {
+  select { //all for the filter
+      font-size: 1.6em;
+      display: block;
+    }
+    label {
+      font-size: 1.2em;
+      @media (min-width: $filter-stack) {
+        margin-left: 45px;
+      }
+    }
+  }
+  .views-exposed-form { //still for the filter
+    text-align: center;
+    @media (min-width: $filter-stack) {
+      float: right;
+      margin-right: 90px;
+    }
+  }
+}
+//SASS for both season/events and little viewer
+.events-page article, .little-play-viewer {
+  @media (max-width: $small-size) {
+    text-align: center;
+  }
+  h2 { //style for play title
+    @extend %inline;
+    font-size: 2.5em;
+    @media (min-width: $small-size) {
+      margin-right: 20px;
+    }
+    a {
+      color: $lightPurple;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  @extend %basic-play-layout; //copies basic layout
+  .buy-tickets { //style for "BUY TICKETS"
+    @extend %greenButton;
+    width: 85px;
+    margin-top: 15px;
+    @media (min-width: $small-size) {
+      margin-left: 10px;
+    }
+  }
+  .links { // style for "VIEW DETAILS"
+    @extend %greenButton;
+    list-style: none;
+    width: 85px;
+    @media (min-width: $small-size) {
+      margin-left: 10px;
+      margin-top: 15px;
+    }
+  }
+}
+//INDIVIDUAL PLAY PAGE SASS
+.js-quickedit-page-title {
+  @extend %inline; //title & back-button share line
+  span {
+      font-size: 2em;
+  }
+}
+.back-button { //style for "Back To the List"
+  @extend %greenButton;
+  width: 160px;
+  margin-left: 25px;
+  font-size: 1.3em;
+}
+.play-full {//start of indivual play node
+  @extend %basic-play-layout; //copies basic layout
+  .date-range {
+    margin-left: 180px;
+    color: $purple;
+  }
+  .play_blurb {
+    margin-top: 10px;
+  }
+  .date-words {
+    clear: both;
+  }
+  .buy-tickets {
+    @extend %greenButton;
+    font-size: 2em;
+    width: 140px;
+    margin-top: 50px;
+    transition: background-color .2s,
+                border-color .2s;
+    &:hover {
+      background-color: $lightPurple;
+      border-color: $purple;
+      a {
+        color: white;
+      }
+    }
+    &:active {
+      text-decoration: none;
+    }
+  }
+  .cast-and-crew {
+    h1 {
+      margin-top: 20px;
+    }
+    li {
+      float: left;
+      margin-right: 50px;
+      margin-bottom: 50px;
+    }
+  }
+}

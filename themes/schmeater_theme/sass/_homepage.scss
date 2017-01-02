@@ -1,0 +1,163 @@
+/* SASS for schmeater.com index page*/
+
+.front-page {
+  main {
+    .views-element-container {
+      > h2 { //style for "What's Up Next" text
+        text-align: center;
+        font-size: 2.5em;
+      }
+      .views-row { //targets the play nodes
+        article {
+          h2 { //gets play title to be in line
+            @extend %inline;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Look in _other.scss for green-dotted-
+border-top-message-thing sass */
+
+/* little play viewer is not stylized any
+ differently from the Season/Events page
+ viewer, check out _play-pages.scss  */
+
+.donation { //stylizes the donation button
+  max-width: 450px;
+  margin: 15px auto 0;
+  text-align: center;
+  @media (min-width: $large-size) {
+    margin-left: 30px;
+  }
+  .donate { //"DONATE TODAY" styling
+    @extend %greenButton;
+    width: 100%;
+    padding: 10px 0;
+    font-family: titleFont;
+    font-size: 2.1em;
+    text-decoration: underline;
+    color: black;
+    &:hover {
+      background-color: $green;
+      color: white;
+    }
+  }
+}
+.directions { //stylizes the directions button
+  display: block;
+  height: 100px;
+  width: 250px;
+  @media (min-width: $phone-size) {
+    width: 300px;
+  }
+  @media (min-width: $small-size) {
+    width: 400px;
+  }
+  margin: 15px auto 25px;
+  border: solid 1px $green;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+  &:hover {
+    border: solid 2px deepskyblue;
+  }
+  h2 { //"GET DIRECTIONS" styling
+    margin-top: 5px;
+    margin-bottom: -38px; //so it overlaps
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+  .map { //background map image
+    height: 150px;
+    width: 250px;
+    @media (min-width: $phone-size) {
+      height: 200px;
+      width: 400px;
+    }
+    @media (min-width: $small-size) {
+      width: 400px;
+    }
+    background-image: url(../images/map.png);
+    background-size: cover;
+    background-position: center center;
+    transition: height .3s;
+    &:hover {
+      height: 150px;
+    }
+  }
+}
+//LITTLE PHOTO VIEWER SASS
+.photo-viewer {
+  clear: both; //so it starts on new line
+  position: relative;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  @media (max-width: $small-size) {
+    max-width: 350px;
+    text-align: center;
+  }
+  margin-bottom: 25px;
+  .row-1 { //just one row anyway
+    @extend %resetSize;
+    padding: 15px;
+    border: solid 1px $green;
+    background-color: $lightSatGreen;
+  }
+  .photo-photo {
+    @media (min-width: $small-size) {
+      float: left;
+    }
+    @extend %image;
+  }
+  .photo-caption {
+    margin: 7px 0;
+    @media (min-width: $small-size) {
+      float: left;
+      margin-left: 25px;
+    }
+  }
+  .library-button {
+    @extend %greenButton;
+    width: 150px;
+    padding: 15px 0;
+    @media (min-width: $small-size) {
+      float: left;
+      margin-left: 20px;
+      margin-top: 40px;
+    }
+    @media (min-width: $medium-size) {
+      margin-top: 10px;
+    }
+    @media (min-width: 800px) {
+      float: none;
+      width: 90px;
+      margin-left: 8px;
+      margin-top: 20px;
+    }
+    @media (min-width: 918px) {
+      margin-left: 25px;
+    }
+    @media (min-width: $large-size) {
+      width: 190px;
+    }
+  }
+}
+.art-gallery { //style for Gallery box
+  max-width: 470px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 7px;
+  background-color: $lighterPurple;
+  h2 { //"Now at the Gallery" style
+    @extend %inline;
+    @extend %resetSize;
+    color: white;
+    margin-bottom: 5px;
+    padding: 15px 50px 7px 15px;
+    background-color: $purple;
+  }
+}

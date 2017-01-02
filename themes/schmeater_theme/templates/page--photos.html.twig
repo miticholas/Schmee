@@ -1,0 +1,35 @@
+<header role="banner">
+  {{ page.header }}
+  <div data-spy="affix" data-offset-top="175" class="main-nav affix-top">
+    <nav class="navbar navbar-default navbar-inner">
+      <div class="container-fluid">
+        {{ page.navigation_collapsible }}
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="layout-content photos-page">
+  {{ page.breadcrumb }}
+
+  <main role="main">
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+
+    <div class="content">
+    <h1 class="library-title">The Schmeater Photo Library</h1>
+      {{ page.content }}
+      {% if page.sidebar %}
+        <aside class="layout-sidebar-first col-sm-3" role="complementary">
+          {{ page.sidebar }}
+        </aside>
+      {% endif %}
+    </div>{# /.layout-content #}
+
+  </main>
+</div>{# /.container #}
+
+{% if page.footer %}
+  <footer role="contentinfo">
+    {{ page.footer }}
+  </footer>
+{% endif %}

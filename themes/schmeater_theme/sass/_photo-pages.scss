@@ -1,0 +1,85 @@
+//INDIVIDUAL PHOTO PAGE SASS
+.photo-full {
+  text-align: center; //all aligns center wow!
+  .photo-title {
+    margin-top: 50px;
+  }
+  .photo-back-button {
+    @extend %greenButton;
+    width: 150px;
+  }
+  .photo-photo {
+    margin-top: 15px;
+    @extend %image;
+  }
+  .photo-caption {
+    margin: 15px 0;
+    font-size: 1.5em;
+  }
+  .photo-date {
+    @extend %inline;
+    margin-bottom: 50px;
+    &:before { //self-made title
+      content: "Date Taken: ";
+      font-weight: bold;
+    }
+  }
+  .photo-tags {
+    @extend %inline;
+    margin-left: 25px;
+    &:before { //self-made title
+      content: "Play Name: ";
+      font-weight: bold;
+    }
+  }
+  .photo-tag {
+    @extend %inline;
+  }
+}
+
+//PHOTO LIBRARY PAGE SASS
+.library-title { //page title
+  font-size: 3.6em;
+  margin-top: 50px;
+  text-align: center;
+}
+.photos-page { //encases rest of content
+  #views-exposed-form-photo-gallery-page-1 {
+    text-align: center;
+  }
+  .js-form-item {
+    margin-top: 20px;
+  }
+  label { //labels for sorting filters
+    @extend %inline;
+    margin-right: 5px;
+  }
+  .form-autocomplete {
+    max-width: 250px;
+  }
+  .js-form-item-date-value {
+    .form-text {
+      max-width: 100px;
+    }
+  }
+  span {
+      font-size: .8em;
+      color: black;
+  }
+  .photo-date {
+    @extend %inline;
+    margin-top: 10px;
+    &:before { //self-made title
+      content: "Taken On: ";
+      font-weight: bold;
+    }
+  }
+  .photo-photo {
+    @extend %image;
+  }
+  .photo-link {
+    @extend %greenButton;
+    width: 100px;
+    margin-top: 10px;
+  }
+}

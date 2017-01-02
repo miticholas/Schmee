@@ -1,0 +1,20 @@
+core: 8.x
+type: theme
+base theme: bootstrap
+
+name: 'Schmeater Theme'
+description: 'Bootstrap subtheme for Theater Schmeater website.'
+package: 'Bootstrap'
+
+regions:
+  header: 'Header'
+  navigation_collapsible: 'Navigation (Collapsible)'
+  breadcrumb: 'Breadcrumbs'
+  content: 'Main Content'
+  sidebar: 'Sidebar'
+  footer: 'Footer'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+
+libraries:
+  - 'schmeater_theme/global-styling'
